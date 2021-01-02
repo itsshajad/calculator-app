@@ -28,7 +28,7 @@ function App() {
   };
   const calculate = () => {
     try {
-      setResult(eval(result));
+      // setResult(eval(result));
     } catch (e) {
       setResult('error');
     }
