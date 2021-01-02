@@ -1,23 +1,43 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import KeyPad from './components/KeyPad';
+import Output from './components/Output';
 
 function App() {
+  const [result, setResult] = useState('');
+
+  const buttonPressed = (buttonName) => {
+    if (buttonName === '=') {
+      calculate();
+    } else if (buttonName === 'CE') {
+      reset();
+    } else if (buttonName === 'X') {
+      // backspace();
+      setResult(result.toString().slice(0, -1));
+      console.log(result);
+    } else {
+      setResult(result + buttonName);
+    }
+  };
+
+  // const backspace = () => {
+  //   setResult(result.slice(0, -1));
+  // };
+  const reset = () => {
+    setResult('');
+  };
+  const calculate = () => {
+    try {
+      setResult(eval(result));
+    } catch (e) {
+      setResult('error');
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Output result={result} />
+      <KeyPad findButton={buttonPressed} />
     </div>
   );
 }

@@ -1,38 +1,47 @@
 .App {
-  text-align: center;
+  width: 100%;
+  max-width: 328px;
+  margin: auto;
+  background-color: #3c3c3c;
+  padding: 15px;
+  color: #fff;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.keypads {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 64px);
+  grid-gap: 15px;
+  margin-top: 15px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.keypads button {
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background: #292929;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 2px 2px 5px #000000;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.keypads button:focus {
+  box-shadow: none;
 }
-
-.App-link {
-  color: #61dafb;
+.keypads button:last-child {
+  grid-column: 3/5;
+  background-color: #676767;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.keypads button:nth-child(4n) {
+  background-color: #676767;
+}
+.keypads button:nth-child(4) {
+  background-color: #bf360c;
+}
+.keypads button:first-child {
+  background-color: #ff6f00;
+}
+.calculator-result {
+  min-height: 56px;
+  text-align: right;
+  font-size: 39px;
 }
