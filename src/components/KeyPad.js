@@ -4,8 +4,11 @@ const KeyPad = ({ findButton }) => {
   const buttonPressed = (e) => {
     findButton(e.target.name);
   };
+  const keyFind = (e) => {
+    console.log(e.which || e.keyCode);
+  };
   return (
-    <div className="keypads">
+    <div className="keypads" onKeyPress={keyFind}>
       <button name="CE" onClick={buttonPressed}>
         CE
       </button>

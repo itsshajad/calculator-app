@@ -14,7 +14,7 @@
   margin-top: 15px;
 }
 .keypads button {
-  border-radius: 20px;
+  border-radius: 34px;
   border: none;
   outline: none;
   background: #292929;
@@ -24,7 +24,8 @@
   user-select: none;
   box-shadow: 2px 2px 5px #000000;
 }
-.keypads button:focus {
+.keypads button:focus,
+.keypads button:active {
   box-shadow: none;
 }
 .keypads button:last-child {
