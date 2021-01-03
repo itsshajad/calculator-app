@@ -12,16 +12,12 @@ function App() {
     } else if (buttonName === 'CE') {
       reset();
     } else if (buttonName === 'X') {
-      // backspace();
       setResult(result.toString().slice(0, -1));
     } else {
       setResult(result + buttonName);
     }
   };
 
-  // const backspace = () => {
-  //   setResult(result.slice(0, -1));
-  // };
   const reset = () => {
     setResult('');
   };

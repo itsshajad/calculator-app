@@ -1,14 +1,20 @@
 import React from 'react';
+import buttonSound from '../Mouse_Click_4-fesliyanstudios.com.mp3';
 
 const KeyPad = ({ findButton }) => {
   const buttonPressed = (e) => {
     findButton(e.target.name);
+    var mySound = new Audio(buttonSound);
+    mySound.play();
+
+    if (e.button === 0) {
+      // rightClickActive(e);
+      // rightClickDeactive(e);
+    }
   };
-  const keyFind = (e) => {
-    console.log(e.which || e.keyCode);
-  };
+
   return (
-    <div className="keypads" onKeyPress={keyFind}>
+    <div className="keypads">
       <button name="CE" onClick={buttonPressed}>
         CE
       </button>

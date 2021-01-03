@@ -1,10 +1,16 @@
 .App {
   width: 100%;
-  max-width: 328px;
+  min-width: 320px;
+  max-width: 390px;
   margin: auto;
-  background-color: #3c3c3c;
-  padding: 15px;
+  background-color: #292929;
+  padding: 50px 32px;
   color: #fff;
+  border-radius: 16px;
+  min-height: 75vh;
+  display: grid;
+  overflow: hidden;
+  box-shadow: 2px 2px 20px 6px #00000021;
 }
 .keypads {
   display: grid;
@@ -12,21 +18,27 @@
   grid-template-rows: repeat(5, 64px);
   grid-gap: 15px;
   margin-top: 15px;
+  align-self: self-end;
 }
 .keypads button {
-  border-radius: 34px;
+  border-radius: 50px;
   border: none;
   outline: none;
   background: #292929;
-  color: #fff;
+  color: #ede7f6;
   font-size: 24px;
   cursor: pointer;
   user-select: none;
-  box-shadow: 2px 2px 5px #000000;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0px 0px 1px 1px #000;
+}
+.keypads button:not(:last-child) {
+  width: 64px;
+  height: 64px;
 }
 .keypads button:focus,
 .keypads button:active {
-  box-shadow: none;
+  box-shadow: inset 0px 0px 1px 0px #000;
 }
 .keypads button:last-child {
   grid-column: 3/5;
@@ -42,7 +54,17 @@
   background-color: #ff6f00;
 }
 .calculator-result {
-  min-height: 56px;
+  min-height: 62px;
   text-align: right;
+  max-width: 300px;
+  padding-bottom: 10px;
   font-size: 39px;
+  border-bottom: 1px solid black;
+  word-break: break-all;
+  align-self: self-end;
+}
+@media (min-width: 768px) {
+  .App {
+    background-color: #000000;
+  }
 }
