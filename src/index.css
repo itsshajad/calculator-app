@@ -14,7 +14,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #292929;
+  background-color: #000;
   padding: 10px;
 }
 
@@ -25,4 +25,9 @@ code {
 
 button {
   padding: 15px;
+}
+@media (min-width: 768px) {
+  body {
+    background-color: #292929;
+  }
 }
