@@ -14,7 +14,6 @@ function App() {
     } else if (buttonName === 'X') {
       // backspace();
       setResult(result.toString().slice(0, -1));
-      console.log(result);
     } else {
       setResult(result + buttonName);
     }
@@ -28,7 +27,8 @@ function App() {
   };
   const calculate = () => {
     try {
-      setResult(eval(result.toString()));
+      /* eslint no-eval: 0 */
+      return setResult(eval(result));
     } catch (e) {
       setResult('error');
     }
