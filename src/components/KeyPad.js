@@ -25,7 +25,7 @@ const KeyPad = ({ findButton }) => {
         %
       </button>
       <button name="X" onClick={buttonPressed}>
-        &#x2715;
+        {/* &#x2715;  */}⌫
       </button>
       <button name="7" onClick={buttonPressed}>
         7
@@ -37,7 +37,7 @@ const KeyPad = ({ findButton }) => {
         9
       </button>
       <button name="*" onClick={buttonPressed}>
-        X
+        &#x2715;
       </button>
       <button name="4" onClick={buttonPressed}>
         4
