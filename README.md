@@ -1,2 +1,2 @@
 # React Calculator App
-link:  https://goofy-yonath-d26177.netlify.app/
+link:  https://determined-bardeen-c7095b.netlify.app/app/
